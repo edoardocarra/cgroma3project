@@ -89,5 +89,27 @@ Examples =
 		particlesPerSecond : 720,
 		particleDeathAge   : 0.05,		
 		emitterDeathAge    : 60
+	},
+
+	clouds :
+	{
+		positionStyle  : Type.CUBE,
+		positionBase   : new THREE.Vector3( -50, 300,  -50 ),
+		positionSpread : new THREE.Vector3(    0,  50, 300 ),
+		
+		velocityStyle  : Type.CUBE,
+		velocityBase   : new THREE.Vector3( 40, 0, 0 ),
+		velocitySpread : new THREE.Vector3( 20, 0, 0 ), 
+		
+		particleTexture : THREE.ImageUtils.loadTexture( 'assets/textures/general/smokeparticle.png'),
+
+		sizeBase     : 80.0,
+		sizeSpread   : 100.0,
+		colorBase    : new THREE.Vector3(0.0, 0.0, 1.0), // H,S,L
+		opacityTween : new Tween([0,1,4,5],[0,1,1,0]),
+
+		particlesPerSecond : 50,
+		particleDeathAge   : 10.0,		
+		emitterDeathAge    : 60
 	}
 }

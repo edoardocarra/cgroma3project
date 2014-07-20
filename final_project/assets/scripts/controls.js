@@ -8,6 +8,7 @@
             this.mirror2 = true;
             this.day = false;
             this.night = false;
+            this.clouds = false;
         }
 
         var gui = new dat.GUI();
@@ -20,6 +21,7 @@
       var mirror_ctrl2 = gui.add(controlGUI, 'mirror2');
       var day_ctrl = gui.add(controlGUI, 'day');
       var night_ctrl = gui.add(controlGUI, 'night');
+      var cloud_control = gui.add(controlGUI, 'clouds');
 
       track_control.onChange(function (value) {
           trackballControls.enabled = value;            
@@ -53,4 +55,10 @@
       night_ctrl.onChange(function (value) {
           if(controlGUI.night){dinamic = false; sole.position.y = -400; sole.position.x = 0;} 
           else dinamic = true;  
+      });
+
+      cloud_control.onChange(function (value) {
+          if(controlGUI.clouds) {engine2.initialize(); clouds=true;}
+          else {engine2.destroy(); clouds=false;}
+
       });

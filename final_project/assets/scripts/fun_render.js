@@ -53,7 +53,8 @@
             
             if(forn.acceso) 
                 forn.pentolone.engine.update( dt * 0.1 );
-            
+            if(clouds) 
+                engine2.update(dt * 0.1);
 
             if ( video.readyState === video.HAVE_ENOUGH_DATA ) {
                 video.videoImageContext.drawImage( video, 0, 0 );

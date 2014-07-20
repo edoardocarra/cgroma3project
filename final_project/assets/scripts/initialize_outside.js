@@ -18,3 +18,10 @@ function initialize_outside (scene,controls) {
 							 .start();
 	}
 }
+
+function initialize_clouds() {
+
+	engine2 = new ParticleEngine();
+    engine2.setValues( Examples.clouds );
+
+}

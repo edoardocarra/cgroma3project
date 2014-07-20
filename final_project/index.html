@@ -178,6 +178,8 @@
             var FPCon = false;
             var dinamic = true;
             var projector;
+            var clouds = false;
+            var engine2;
 
             var urls_day = ["assets/textures/general/lostatseaday_front.jpg",
                             "assets/textures/general/lostatseaday_back.jpg",
@@ -247,7 +249,8 @@
         initialize_room1_stuff(scene);
         //camera da letto e bagno + campanello
         initialize_room2_stuff(scene); 
-
+        //nuvole
+        initialize_clouds();
         ////////////////////////////////////////////////////////////////////////////
 
         house.rotation.x = -Math.PI/2;  
