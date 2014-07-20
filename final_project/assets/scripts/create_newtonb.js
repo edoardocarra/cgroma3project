@@ -29,19 +29,19 @@
         ballc3.position.set(-.4,0,0);
         palline.add(ballc3);
 
-        var suono = Sound("clang",.6,true);
+        var suono = Sound("clang",0.05,true);
         
         var tween4 = new TWEEN.Tween(pball2.rotation)
-                              .to({z:0},190);
+                              .to({z:0},210);
 
         var tween3 = new TWEEN.Tween(pball2.rotation)
-                              .to({z:Math.PI/4},190);
+                              .to({z:Math.PI/4},210);
 
         var tween2 = new TWEEN.Tween(pball.rotation)
-                              .to({z:0},200);
+                              .to({z:0},210);
 
         var tween1 = new TWEEN.Tween(pball.rotation)
-                              .to({z:-Math.PI/4},190);
+                              .to({z:-Math.PI/4},210);
 
         tween4.chain(tween1);
         tween3.chain(tween4);
@@ -59,7 +59,7 @@
           }
           else {
             palline.suono.pause();
-            palline.suono = Sound("clang",1,true);
+            palline.suono = Sound("clang",.05,true);
             TWEEN.remove(tween1);
             TWEEN.remove(tween2);
             TWEEN.remove(tween3);

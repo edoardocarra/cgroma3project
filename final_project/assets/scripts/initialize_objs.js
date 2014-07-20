@@ -88,7 +88,7 @@
 
         var vestiti = get_obj("hanging-clothes2.obj","hanging-clothes2.mtl");
         vestiti.scale.set(.1,.1,.05);
-        vestiti.position.set(38,12,-42.5);
+        vestiti.position.set(38,11.5,-42);
         scene.add(vestiti);
 
                 var sediacameretta = get_obj("office_chair.obj","office_chair.mtl");

@@ -158,13 +158,13 @@
 
         grammofono.open = function () {
             var disc_tween = new TWEEN.Tween(grammofono.cono.rotation)
-                            .to({y:Math.PI/2}, 2000)
+                            .to({y:Math.PI/2}, 1000)
                             .start();
         }
 
         grammofono.close = function () {
             var disc_tween = new TWEEN.Tween(grammofono.cono.rotation)
-                            .to({y:0}, 2000)
+                            .to({y:0}, 1000)
                             .start();
         }
 
@@ -185,6 +185,7 @@
         }
 
         grammofono.stop = function () {
+            grammofono.manopola.rotation.x = 0;
             TWEEN.remove(grammofono.giro);
             TWEEN.remove(grammofono.giro2);
         }

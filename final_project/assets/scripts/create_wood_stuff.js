@@ -278,6 +278,10 @@
                       new THREE.MeshPhongMaterial({color:0x505050, metal:true, shininess:200}));
         var cilman = new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,.2,32,32), 
                       new THREE.MeshPhongMaterial({color:0x505050, metal:true, shininess:200}));
+        var asta = new THREE.Mesh(new THREE.CylinderGeometry(.15,.15,13,32,32),
+                      new THREE.MeshPhongMaterial({color:0x505050, metal:true, shininess:200}));
+        asta.rotation.z = Math.PI/2;
+        asta.position.set(-4.2,4,-2.5);
         maniglia.position.set(-.65,0,.45);
         cilman.position.set(-.65,0,.2);
         cilman.rotation.x = Math.PI/2;
@@ -318,6 +322,7 @@
         complex.add(perno56);
         complex.add(perno78);
         complex.add(perno910);
+        complex.add(asta);
 
         complex.perno12 = perno12;
         complex.perno34 = perno34;

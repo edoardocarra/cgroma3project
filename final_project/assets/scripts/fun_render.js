@@ -1,6 +1,8 @@
         function render() { 
             var dt = clock.getDelta();
             step += 0.002;
+            annie.update(1000 * dt);
+            annie2.update(1000 * dt);
 
             if(dinamic) {
             sole.position.y = 400*(Math.sin(step));
@@ -10,7 +12,7 @@
             directLight.position = sole.position;
             
             if (FPCon === true) {
-                computeFPControls();
+                animate();
             }
 
             if(sole.position.y <0) {
@@ -68,20 +70,6 @@
                 trackballControls.update();
                 TWEEN.update();
 
-            if(FPCon===true) {
-                controls.isOnObject( false );
-                ray.ray.origin.copy( controls.getObject().position );
-                ray.ray.origin.y -= 9;
-                var intersections = ray.intersectObjects( objects );
-                if ( intersections.length > 0 ) {
-                  var distance = intersections[ 0 ].distance;
-                  if ( distance > 0 && distance < 18 ) {
-                    controls.isOnObject( true );
-                  }
-                }
-
-                controls.update();
-            }
         }
 
 

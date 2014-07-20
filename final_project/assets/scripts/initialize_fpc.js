@@ -57,10 +57,19 @@ if (havePointerLock) {
    }
  };
 
- function computeFPControls() {
-   controls.isOnObject(false);
-   controls.update();
- }
-
 }
 
+function animate() {
+    controls.isOnObject( false );
+    ray.ray.origin.copy( controls.getObject().position );
+    ray.ray.origin.y -= 0;
+    var intersections = ray.intersectObjects( objects );
+    if ( intersections.length > 0 ) {
+        var distance = intersections[ 0 ].distance;
+        if ( distance > 0 && distance < 18 ) {
+            controls.isOnObject( true );
+        }
+    }
+
+    controls.update();
+}

@@ -8,9 +8,9 @@ function initialize_outside (scene,controls) {
 
 	scala.interact = function() {
 		var tween3 = new TWEEN.Tween(controls.getObject().position)
-							 .to({x:48,y:45,z:-5},100);	
+							 .to({x:48,y:48,z:-5},100);	
 		var tween2 = new TWEEN.Tween(controls.getObject().position)
-							 .to({x:48,y:45,z:5},1000)
+							 .to({x:48,y:48,z:5},1000)
 							 .chain(tween3);
 		var tween = new TWEEN.Tween(controls.getObject().position)
 							 .to({x:48,z:5},1000)

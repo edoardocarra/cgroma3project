@@ -58,13 +58,19 @@
 
         obj_interruttore.ison = true;
 
+        var swsound;
+
         obj_interruttore.interact = function() {
           if(!obj_interruttore.ison) {
+            swsound = Sound("switch",.2,false);
+            swsound.play();
             lampada.turnOn();
             light.intensity = intensity;
             obj_interruttore.interrutorein.rotation.x = Math.PI/16;
             obj_interruttore.ison = true;
           } else {
+            swsound = Sound("switch",.2,false);
+            swsound.play();
             lampada.turnOff();
             light.intensity = 0;
             obj_interruttore.interrutorein.rotation.x = -Math.PI/16;

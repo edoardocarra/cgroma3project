@@ -42,12 +42,12 @@ function initialize_grammofono_exposer(scene) {
             if(grammofono.active) {
                 if(box2.inplay) { 
                     box2.interact2();
-                    setTimeout(function(){box1.interact2();},5000);
+                    setTimeout(function(){box1.interact2();},4000);
                 }
                 else
                     if(box3.inplay) {
                         box3.interact2();
-                        setTimeout(function(){box1.interact2();},5000);
+                        setTimeout(function(){box1.interact2();},4000);
                     } else box1.interact2();
             } else box1.interact2();
         }
@@ -69,18 +69,17 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box3);
                     
                     var tween_box1 = new TWEEN.Tween(box1.cd.position)
-                    .to({x:0,y:4,z:7.4}, 1000)
-                    .chain(tween_box2);
+                    .to({x:0,y:4,z:7.4}, 1000);
 
-                    var tween_box1 = new TWEEN.Tween(box1.cd.position)
+                    var tween_box = new TWEEN.Tween(box1.cd.position)
                     .to({x:4}, 1000)
-                    .chain(tween_box1)
+                    .chain(tween_box1,tween_box2)
                     .start();
                     
 
-                    setTimeout(function(){grammofono.close();},5000);
-                    setTimeout(function(){grammofono.gira();},7000);
-                    setTimeout(function(){box1.play();},8000);  
+                    setTimeout(function(){grammofono.close();},4000);
+                    setTimeout(function(){grammofono.gira();},5000);
+                    setTimeout(function(){box1.play();},6000);  
 
                     grammofono.active=true;
                     box1.inplay = true; 
@@ -99,14 +98,14 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box4);
 
                     var tween_box2 = new TWEEN.Tween(box1.cd.rotation)
-                    .to({x:Math.PI/2}, 1000)
-                    .chain(tween_box3);
+                    .to({x:Math.PI/2}, 1000);
+                    
                     
                     var tween_box1 = new TWEEN.Tween(box1.cd.position)
                     .to({x:0}, 1000)
-                    .chain(tween_box2);
+                    .chain(tween_box2,tween_box3);
 
-                    var tween_box1 = new TWEEN.Tween(box1.cd.position)
+                    var tween_box = new TWEEN.Tween(box1.cd.position)
                     .to({y:4}, 1000)
                     .chain(tween_box1)
                     .start();
@@ -123,12 +122,12 @@ function initialize_grammofono_exposer(scene) {
             if(grammofono.active) {
                 if(box1.inplay) { 
                     box1.interact2();
-                    setTimeout(function(){box2.interact2();},5000);
+                    setTimeout(function(){box2.interact2();},4000);
                 }
                 else
                     if(box3.inplay) {
                         box3.interact2();
-                        setTimeout(function(){box2.interact2();},5000);
+                        setTimeout(function(){box2.interact2();},4000);
                     } else box2.interact2();
             } else box2.interact2();
         }
@@ -151,18 +150,18 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box3);
                     
                     var tween_box1 = new TWEEN.Tween(box2.cd.position)
-                    .to({x:0,y:4,z:7.4}, 1000)
-                    .chain(tween_box2);
+                    .to({x:0,y:4,z:7.4}, 1000);
+                    
 
-                    var tween_box1 = new TWEEN.Tween(box2.cd.position)
+                    var tween_box = new TWEEN.Tween(box2.cd.position)
                     .to({x:4}, 1000)
-                    .chain(tween_box1)
+                    .chain(tween_box1,tween_box2)
                     .start();
                     
 
-                    setTimeout(function(){grammofono.close();},5000);
-                    setTimeout(function(){grammofono.gira();},7000);
-                    setTimeout(function(){box2.play();},8000);  
+                    setTimeout(function(){grammofono.close();},4000);
+                    setTimeout(function(){grammofono.gira();},5000);
+                    setTimeout(function(){box2.play();},6000);  
 
                     grammofono.active=true;
                     box2.inplay = true;    
@@ -179,14 +178,14 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box4);
 
                     var tween_box2 = new TWEEN.Tween(box2.cd.rotation)
-                    .to({x:Math.PI/2}, 1000)
-                    .chain(tween_box3);
+                    .to({x:Math.PI/2}, 1000);
+                    
                     
                     var tween_box1 = new TWEEN.Tween(box2.cd.position)
                     .to({x:0}, 1000)
-                    .chain(tween_box2);
+                    .chain(tween_box2,tween_box3);
 
-                    var tween_box1 = new TWEEN.Tween(box2.cd.position)
+                    var tween_box = new TWEEN.Tween(box2.cd.position)
                     .to({y:4}, 1000)
                     .chain(tween_box1)
                     .start();
@@ -202,12 +201,12 @@ function initialize_grammofono_exposer(scene) {
             if(grammofono.active) {
                 if(box1.inplay) { 
                     box1.interact2();
-                    setTimeout(function(){box3.interact2();},5000);
+                    setTimeout(function(){box3.interact2();},4000);
                 }
                 else
                     if(box2.inplay) {
                         box2.interact2();
-                        setTimeout(function(){box3.interact2();},5000);
+                        setTimeout(function(){box3.interact2();},4000);
                     } else box3.interact2();
             } else box3.interact2();
         }
@@ -230,18 +229,18 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box3);
                     
                     var tween_box1 = new TWEEN.Tween(box3.cd.position)
-                    .to({x:0,y:4,z:7.4}, 1000)
-                    .chain(tween_box2);
+                    .to({x:0,y:4,z:7.4}, 1000);
+                    
 
-                    var tween_box1 = new TWEEN.Tween(box3.cd.position)
+                    var tween_box = new TWEEN.Tween(box3.cd.position)
                     .to({x:4}, 1000)
-                    .chain(tween_box1)
+                    .chain(tween_box1,tween_box2)
                     .start();
                     
 
-                    setTimeout(function(){grammofono.close();},5000);
-                    setTimeout(function(){grammofono.gira();},7000);
-                    setTimeout(function(){box3.play();},8000);  
+                    setTimeout(function(){grammofono.close();},4000);
+                    setTimeout(function(){grammofono.gira();},5000);
+                    setTimeout(function(){box3.play();},6000);  
 
                     grammofono.active=true;
                     box3.inplay = true;    
@@ -258,14 +257,14 @@ function initialize_grammofono_exposer(scene) {
                     .chain(tween_box4);
 
                     var tween_box2 = new TWEEN.Tween(box3.cd.rotation)
-                    .to({x:Math.PI/2}, 1000)
-                    .chain(tween_box3);
+                    .to({x:Math.PI/2}, 1000);
+                    
                     
                     var tween_box1 = new TWEEN.Tween(box3.cd.position)
                     .to({x:0}, 1000)
-                    .chain(tween_box2);
+                    .chain(tween_box2,tween_box3);
 
-                    var tween_box1 = new TWEEN.Tween(box3.cd.position)
+                    var tween_box = new TWEEN.Tween(box3.cd.position)
                     .to({y:4}, 1000)
                     .chain(tween_box1)
                     .start();

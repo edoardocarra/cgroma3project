@@ -288,21 +288,26 @@
             perno.add(glass_fin);
             perno.add(man_1);
             joint.perno = perno;
-            joint.perno.maniglia = man_1;          
+            joint.perno.maniglia = man_1;
+            var snd;          
             joint.interact = function() {
               var doorTween,doorTween2;
               if(joint.perno.rotation.z == 0) {
+              snd = Sound("door_open",.5,false);
+              snd.play();
               doorTween = new TWEEN.Tween(joint.perno.rotation)
               .to({z:-Math.PI/2}, 2000);
               
               doorTween3 = new TWEEN.Tween(joint.perno.maniglia.rotation)
-              .to({x:0}, 1000);
+              .to({x:0}, 500);
 
               doorTween2 = new TWEEN.Tween(joint.perno.maniglia.rotation)
-              .to({x:-Math.PI/2}, 1000)
+              .to({x:-Math.PI/2}, 500)
               .chain(doorTween,doorTween3)
               .start();
-              } else {               
+              } else { 
+                snd = Sound("door_close",.2,false);
+                setTimeout(function(){snd.play();},1800);              
                 doorTween = new TWEEN.Tween(joint.perno.rotation)
                 .to({z:0}, 2000)
                 .start();           
@@ -357,19 +362,23 @@
           joint.perno = perno;
           joint.perno.maniglia = man_1;
           joint.interact = function() {
-          var doorTween,doorTween2;
+          var doorTween,doorTween2,snd;
             if(joint.perno.rotation.z == 0) {
+            snd = Sound("door-lock-1",.2,false);
+            snd.play();
             doorTween = new TWEEN.Tween(joint.perno.rotation)
             .to({z:Math.PI/2}, 2000);
 
             doorTween3 = new TWEEN.Tween(joint.perno.maniglia.rotation)
-            .to({x:0}, 1000);
+            .to({x:0}, 500);
               
             doorTween2 = new TWEEN.Tween(joint.perno.maniglia.rotation)
-            .to({x:-Math.PI/2}, 1000)
+            .to({x:-Math.PI/2}, 500)
             .chain(doorTween,doorTween3)
             .start();
             } else {
+              snd = Sound("door-lock-2",.2,false);
+              setTimeout(function(){snd.play();},1800);
               doorTween = new TWEEN.Tween(joint.perno.rotation)
               .to({z:0}, 2000)
               .start();           

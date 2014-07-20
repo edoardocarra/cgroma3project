@@ -31,6 +31,7 @@ function initialize_kitchen_stuff(scene) {
         scene.add(forn);
 
         appoggiotvcucina = create_tvcucina();
+        appoggiotvcucina.obj_tv.contact.first = appoggiotvcucina.obj_tv;
         appoggiotvcucina.position.set(64,18,-77);
         scene.add(appoggiotvcucina); 
 }

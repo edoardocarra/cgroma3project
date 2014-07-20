@@ -110,53 +110,52 @@
   		<script type="text/javascript" src="assets/libs/MTLLoader.js"></script> 
   		<script type="text/javascript" src="assets/libs/OBJMTLLoader.js"></script> 
   		<script src="assets/libs/TrackballControls.js"></script>
-  		<script src="assets/js/support_myapartment.js"></script>
+  		<script src="assets/scripts/support_myapartment.js"></script>
   		<script src="assets/libs/tween.min.js"></script>
    	    <script src="assets/libs/PointerLockControls.js"></script>
-        <script src="assets/js/support_audio.js"></script>
+        <script src="assets/scripts/support_audio.js"></script>
         <script src="assets/libs/ParticleEngine.js"></script>
         <script src="assets/libs/ParticleEngineExamples.js"></script>
-        <script src="assets/js/create_walls_and_floors.js"></script>
-        <script src="assets/js/create_camera_and_projector.js"></script>
-        <script src="assets/js/create_wood_stuff.js"></script>
-        <script src="assets/js/create_grammofono.js"></script>
-        <script src="assets/js/create_kitchen.js"></script>
-        <script src="assets/js/create_tv.js"></script>
-        <script src="assets/js/create_webcam.js"></script>
-        <script src="assets/js/create_newtonb.js"></script>
-        <script src="assets/js/create_sveglia.js"></script>
-        <script src="assets/js/create_bathroom_stuff.js"></script>
-        <script src="assets/js/create_lamp_and_switch.js"></script>
-        <script src="assets/js/initialize_entrance.js"></script>
-        <script src="assets/js/initialize_walls_and_pavements.js"></script>
-        <script src="assets/js/initialize_lights.js"></script>
-        <script src="assets/js/initialize_objs.js"></script>
-        <script src="assets/js/initialize_wall_stuff.js"></script>
-        <script src="assets/js/initialize_windows.js"></script>
-        <script src="assets/js/initialize_doors.js"></script>
-        <script src="assets/js/initialize_grammofono_exposer.js"></script>
-        <script src="assets/js/initialize_cinepresa_proiettore.js"></script>
-        <script src="assets/js/initialize_kitchen_stuff.js"></script>
-        <script src="assets/js/load_house_struct.js"></script>
-        <script src="assets/js/initialize_room1_stuff.js"></script>
-        <script src="assets/js/initialize_room2_stuff.js"></script>
-        <script src="assets/js/initialize_ufo.js"></script>
-        <script src="assets/js/initialize_fpc.js"></script>
-        <script src="assets/js/initialize_outside.js"></script>
-        <script src="assets/js/fun_render.js"></script>
-        <script src="assets/js/controls.js"></script>
+        <script src="assets/scripts/create_walls_and_floors.js"></script>
+        <script src="assets/scripts/create_camera_and_projector.js"></script>
+        <script src="assets/scripts/create_wood_stuff.js"></script>
+        <script src="assets/scripts/create_grammofono.js"></script>
+        <script src="assets/scripts/create_kitchen.js"></script>
+        <script src="assets/scripts/create_tv.js"></script>
+        <script src="assets/scripts/create_webcam.js"></script>
+        <script src="assets/scripts/create_newtonb.js"></script>
+        <script src="assets/scripts/create_sveglia.js"></script>
+        <script src="assets/scripts/create_bathroom_stuff.js"></script>
+        <script src="assets/scripts/create_lamp_and_switch.js"></script>
+        <script src="assets/scripts/initialize_entrance.js"></script>
+        <script src="assets/scripts/initialize_walls_and_pavements.js"></script>
+        <script src="assets/scripts/initialize_lights.js"></script>
+        <script src="assets/scripts/initialize_objs.js"></script>
+        <script src="assets/scripts/initialize_wall_stuff.js"></script>
+        <script src="assets/scripts/initialize_windows.js"></script>
+        <script src="assets/scripts/initialize_doors.js"></script>
+        <script src="assets/scripts/initialize_grammofono_exposer.js"></script>
+        <script src="assets/scripts/initialize_cinepresa_proiettore.js"></script>
+        <script src="assets/scripts/initialize_kitchen_stuff.js"></script>
+        <script src="assets/scripts/load_house_struct.js"></script>
+        <script src="assets/scripts/initialize_room1_stuff.js"></script>
+        <script src="assets/scripts/initialize_room2_stuff.js"></script>
+        <script src="assets/scripts/initialize_ufo.js"></script>
+        <script src="assets/scripts/initialize_fpc.js"></script>
+        <script src="assets/scripts/initialize_outside.js"></script>
+        <script src="assets/scripts/fun_render.js"></script>
+        <script src="assets/scripts/controls.js"></script>
 
 		<script>
             //DICHIARAZIONE DELLE VARIABILI
             var interactable = [];
             var camera, scene, renderer,axisHelper;
             var geometry, material, mesh;
-            var video, videoImage, videoImageContext, videoTexture,video_web;
+            var video, videoImage, videoImageContext, videoTexture,video_web,annie,annie2;
             var controls;
             var grammofono,exposer,forn,appoggiotvcucina,cinepresa,proiettore;
             var box1,box2,box3,espositore;
             var clock = new THREE.Clock();
-            var videotvcucina1;
             var mirrorCube, mirrorCubeCamera,mirrorCube2, mirrorCubeCamera2;
             var house = new THREE.Object3D();
             var objects = [];
@@ -267,7 +266,7 @@
                             door_b4.contact,fin.contact,fin2.contact,fin3.contact,fin4.contact,fin5.contact,fin6.contact,fin7.contact,
                             fin8.contact,cinepresa.contact,proiettore.contact,
                             box1.contact,box2.contact,box3.contact,forn.contact,forn.forno.contact,
-                            forn.contact2,armadio.complex.contact,
+                            forn.contact2,armadio.complex.contact,appoggiotvcucina.obj_tv.contact,
                             pc.contact,balls.contact,sveglia.contact,gabin.contact,lavatr.contact1,
                             lavatr.contact2,interrutore1.contact,interrutore2.contact,interrutore3.contact,interrutore4.contact,
                             interrutore5.contact,interrutore6.contact,ring.contact];

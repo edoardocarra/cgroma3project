@@ -30,6 +30,7 @@
         var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
         movieScreen.rotation.x = -Math.PI/18;
         movieScreen.position.set(0,2.4,-2.8);
+        movieScreen.visible = false;
         obj_pc.add(movieScreen);
 
         video.videoImageContext = videoImageContext;
@@ -40,15 +41,29 @@
 
         obj_pc.onair = false;
 
+        var runnerTexture = new THREE.ImageUtils.loadTexture( 'assets/textures/general/saver.gif' );
+        annie2 = new TextureAnimator( runnerTexture, 2, 2, 4, 100 ); // texture, #horiz, #vert, #total, duration.
+        var runnerMaterial = new THREE.MeshBasicMaterial( { map: runnerTexture, side:THREE.DoubleSide } );
+        var runnerGeometry = new THREE.PlaneGeometry(5.1, 3.5, 1, 1);
+        var runner = new THREE.Mesh(runnerGeometry, runnerMaterial);
+        runner.rotation.x = -Math.PI/18;
+        runner.position.set(0,2.4,-2.8);
+
+        obj_pc.add(runner);
+
         obj_pc.interact = function () {
 
               if (!obj_pc.onair) {
-                  navigator.getUserMedia({video: true}, gotStream, noStream);
-                  obj_pc.onair = true;
+                movieScreen.visible = true;
+                runner.visible = false;
+                navigator.getUserMedia({video: true}, gotStream, noStream);
+                obj_pc.onair = true;
               }
               else {
-                  obj_pc.onair = false;
-                  camvideo.onerror("turnedoff");
+                movieScreen.visible = false;
+                runner.visible = true;
+                obj_pc.onair = false;
+                camvideo.onerror("turnedoff");
               }
         }
 

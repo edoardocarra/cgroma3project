@@ -221,13 +221,17 @@
         complex.pentolone = pentolone;
         complex.forno = forno;
 
+        var soundbolli = Sound("boiling",0.5,true);
+
         pentolone.bolli = function() {
+            soundbolli.play();
             TWEEN.add(pentolone.tween);
             pentolone.engine.initialize();
             pentolone.isboiling = true;
         }
 
         pentolone.stop_bolli = function() {
+            soundbolli.pause();
             TWEEN.remove(pentolone.tween);
             TWEEN.remove(pentolone.tween2);
             pentolone.coperchio.perno.rotation.z=0;
