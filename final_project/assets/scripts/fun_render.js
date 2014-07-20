@@ -22,7 +22,7 @@
                         controls.enabled = false;
                         sole.position.y = -400;
                         dinamic = false;
-                        var tween = new TWEEN.Tween(controls.getObject().position).to({y:200},12000).start();
+                        var tween = new TWEEN.Tween(controls.getObject().position).to({y:200},8000).start();
                         setTimeout(function(){location.reload();},12000);
                     }
                     update_ufo_position(ufo,controls);
